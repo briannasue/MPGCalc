@@ -1,0 +1,45 @@
+@media (max-width: 700px) /*can now be viewed in mobile version on nexus 7*/ {
+      
+   #all {
+      display: block;
+      width: 90%;
+      font-size: 150%;
+   }
+   
+   nav {
+      display: block;
+      width: 100%;
+      height: auto;
+      align: center;
+   }
+   
+   details {
+      padding-top: 20px;
+      padding-left: 20px;
+      padding-bottom: 20px;
+      font-size: 125%;
+   }
+   
+   h2 {
+      font-size: 175%;
+   }
+   
+   img {
+      width: 100%;
+      background-color: white;
+      align: left;
+   }
+   
+   #content{
+      display: block;
+      width: 95%;
+      height: auto;
+      padding-left: 5%;
+   }
+   
+   footer {
+      display: block;
+      width: 100%;    
+   }
+   
+}
