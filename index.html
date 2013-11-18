@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <title>MPG Calculator</title>
+  <meta charset="UTF-8">
+  <link rel = "stylesheet"
+        type = "text/css"
+        href = "mpgWide.css" />
+  <link rel = "stylesheet"
+        type = "text/css"
+        href = "mpgNarrow.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+  <script type = "text/javascript">
+    function calcMPG(){
+      var gallons = 0;
+      var miles = 0;
+      var mpg = 0;
+      
+      gallons = document.getElementById("gallons");
+      miles = document.getElementById("miles");
+      
+      gallons = gallons.value;
+      miles = miles.value;
+
+      mpg = miles/gallons; //make calculation
+      
+      mpg = mpg.toFixed(2) + " mpg"; //Round the answer to 2 decimal point
+
+      lblOutput.innerHTML = mpg;
+    }
+  </script>
+<body>
+  <div id="all">
+    <header>
+      <h1>MPG Calculator</h1>
+    </header>
+
+    <div id="stuff">
+      <!--INPUT GALLONS-->
+      <label for = "gallons">Enter gallons
+          <input type = "number"
+                 id = "gallons" 
+                 max = "100"
+                 min = "0" />
+      </label>
+      
+      <!--INPUT MILES-->
+      <label for = "miles">Enter Miles
+          <input type = "number"
+                 id = "miles" 
+                 max = "5000"
+                 min = "0" />
+      </label>
+      
+      <!--CLICK TO DO CALCULATION-->
+        <button type = "button"
+              onclick= "calcMPG()" />
+            Calculate MPG
+        </button>
+      
+      <!--OUTPUT FOR ANSWER-->
+      <label id = "lblOutput">
+        MPG
+      </label>
+    </div>
+    
+    
+    <footer>
+      Copyright DooDooMcCalculateMPG
+    </footer>
+  </div>
+</body>
+</html>
