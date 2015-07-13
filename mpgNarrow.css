@@ -4,8 +4,12 @@
       display: block;
       width: 90%;
       font-size: 150%;
-   }
+        }
    
+   label{
+       text-align: left;
+   }
+
    nav {
       display: block;
       width: 100%;
@@ -21,7 +25,7 @@
    }
    
    h2 {
-      font-size: 175%;
+      font-size: 100%;
    }
    
    img {
