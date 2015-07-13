@@ -10,67 +10,144 @@
   <link rel = "stylesheet"
         type = "text/css"
         href = "mpgNarrow.css" />
+  <link rel = "stylesheet"
+        type = "text/css"
+        href = "pure-min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+   <script src="jquery-1.11.3.min.js"></script>
+
+
+
+
 </head>
+
+
   <script type = "text/javascript">
-    function calcMPG(){
-      var gallons = 0;
+
+     function calcMPG(){
+      var price = 0;
       var miles = 0;
+      var car1 = 0;
+      var car2 = 0;
       var mpg = 0;
       
-      gallons = document.getElementById("gallons");
+      price = document.getElementById("price");
       miles = document.getElementById("miles");
-      
-      gallons = gallons.value;
-      miles = miles.value;
+      car1 = document.getElementById("car1");
+      car2 = document.getElementById("car2");
 
-      mpg = miles/gallons; //make calculation
+      price = price.value;
+      miles = miles.value;
+      car1 = car1.value;
+      car2 = car2.value;
+
+      mpg = ((miles/car1) * price) - ((miles/car2) * price); //make calculation
       
-      mpg = mpg.toFixed(2) + " mpg"; //Round the answer to 2 decimal point
+      mpg = "SAVE $" + mpg.toFixed(2); //Round the answer to 2 decimal point
 
       lblOutput.innerHTML = mpg;
-    }
+
+       }
+
+
   </script>
 <body>
-  <div id="all">
+
+<div id="all">
     <header>
       <h1>MPG Calculator</h1>
     </header>
 
-    <div id="stuff">
-      <!--INPUT GALLONS-->
-      <label for = "gallons">Enter gallons
-          <input type = "number"
-                 id = "gallons" 
+
+    <form action="# "id="stuff">
+
+      <!--INPUT CAR 1-->
+   <div class="block"> <label for = "car1">New Vehicle MPG<input type = "number"
+                 id = "car1"
                  max = "100"
                  min = "0" />
-      </label>
+      </label></div>
+
+    </br>     
+
+
+      <!--INPUT CAR 2-->
+      <div class="block"><label for = "car2">Current Vehicle MPG
+          <input type = "number"
+                 id = "car2"
+                 max = "100"
+                 min = "0" />
+      </label></div>
+
+      </br>      
+
+
+
+      <!--INPUT PRICE-->
+  <div class="block"> <label for = "price">Current Gas Price
+          <input type = "number"
+                 step="any"
+                 id = "price" 
+                 max = "500"
+                 min = "0" />
+      </label></div>
+
+      </br>   
+
       
       <!--INPUT MILES-->
-      <label for = "miles">Enter Miles
+    <div class="block"> <label for = "miles">Miles Per Year
           <input type = "number"
                  id = "miles" 
-                 max = "5000"
+                 max = "100000"
                  min = "0" />
-      </label>
+      </label></div>
+
+      </br>      
+
       
       <!--CLICK TO DO CALCULATION-->
-        <button type = "button"
+
+          
+      <button class = "pure-button pure-button-primary" id="btn"
               onclick= "calcMPG()" />
+
             Calculate MPG
-        </button>
+
+
+       </button>
+
+        </br></br>
       
       <!--OUTPUT FOR ANSWER-->
       <label id = "lblOutput">
-        MPG
+        SAVINGS:
       </label>
-    </div>
+    </form> 
     
-    
-    <footer>
-      Copyright DooDooMcCalculateMPG
-    </footer>
+
+   
   </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<script>
+
+$('#stuff').keydown(function() {
+var key = e.which;
+if (key == 13) {
+// As ASCII code for ENTER key is "13"
+$('#stuff').calcMPG(); // Submit form code
+}
+});
+
+
+
+</script>
+
+
+
+
+
 </body>
 </html>
